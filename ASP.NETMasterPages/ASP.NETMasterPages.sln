@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserProfile", "UserProfile\UserProfile.csproj", "{7914B4B3-09C0-4B82-827A-B5C6087DC3CB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InternationalCompany", "InternationalCompany\InternationalCompany.csproj", "{9E2215CE-FC8E-405E-AECA-8F228239E65E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7914B4B3-09C0-4B82-827A-B5C6087DC3CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7914B4B3-09C0-4B82-827A-B5C6087DC3CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7914B4B3-09C0-4B82-827A-B5C6087DC3CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7914B4B3-09C0-4B82-827A-B5C6087DC3CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E2215CE-FC8E-405E-AECA-8F228239E65E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E2215CE-FC8E-405E-AECA-8F228239E65E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E2215CE-FC8E-405E-AECA-8F228239E65E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E2215CE-FC8E-405E-AECA-8F228239E65E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
