@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<html>
+  <head>
+  </head>
+  <body>
+    <form id="myform" runat="server">
+      <mytreetreeview runat="server" ChildType="Folder">
+        <mytreetreenodetype Type="Folder"
+           ExpandedImageUrl="./images/folderopen.gif"
+           ImageUrl="./images/folder.gif" />
+        <mytreetreenode Text="Michigan">
+          <mytreetreenode Text="Detroit" />
+          <mytreetreenode Text="Farmington" />
+          <mytreetreenode Text="Southfield" />
+        </mytreetreenode>
+        <mytreetreenode Text="Washington" >
+          <mytreetreenode Text="Bellevue" />
+          <mytreetreenode Text="Redmond" />
+          <mytreetreenode Text="Woodinville" />
+        </mytreetreenode>
+      </mytreetreeview>
+    </form>
+  </body>
+</html>
