@@ -17,6 +17,6 @@
     </asp:FormView>
 
     <div class="back-link">
-        <a href="/superheroes/">Back to Superheroes List</a>
+        <a href="/Superheroes">Back to Superheroes List</a>
     </div>
 </asp:Content>
