@@ -378,11 +378,9 @@
     <Compile Include="About.aspx.designer.cs">
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
-    <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\NinjectWeb.cs" />
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -400,7 +398,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="NinjectBindingsModules\MVPNinjectBindingsModule.cs" />
     <Compile Include="PresenterFactories\ICustomPresenterFactory.cs" />
     <Compile Include="PresenterFactories\WebFormsMvpPresenterFactory.cs" />
@@ -419,7 +416,6 @@
     <Compile Include="Site.Mobile.Master.designer.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
-    <Compile Include="Startup.cs" />
     <Compile Include="SuperheroDetails.aspx.cs">
       <DependentUpon>SuperheroDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -447,6 +443,10 @@
     <Folder Include="Errors\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SuperheroesUniverse.Authentication\SuperheroesUniverse.Authentication.csproj">
+      <Project>{3dab5941-d8c7-48cb-b1c3-5d9813ab6796}</Project>
+      <Name>SuperheroesUniverse.Authentication</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SuperheroesUniverse.Data\SuperheroesUniverse.Data.csproj">
       <Project>{946ec8af-90b5-4fdc-9ca3-0de5e1ae3d2a}</Project>
       <Name>SuperheroesUniverse.Data</Name>

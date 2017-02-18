@@ -3,8 +3,7 @@ using System.Web;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using Owin;
-using SuperheroesUniverse.Models;
+using SuperheroesUniverse.Authentication;
 
 namespace SuperheroesUniverse.Account
 {
