@@ -1,4 +1,5 @@
-﻿using SuperheroesUniverse.Services;
+﻿using Bytes2you.Validation;
+using SuperheroesUniverse.Services;
 using WebFormsMvp;
 
 namespace SuperheroesUniverse.MVP.Search
@@ -9,6 +10,8 @@ namespace SuperheroesUniverse.MVP.Search
         public SearchPresenter(ISearchView view, ISuperheroesService superheroesService) 
             : base(view)
         {
+            Guard.WhenArgument(superheroesService, nameof(superheroesService)).IsNull().Throw();
+
             this.superheroesService = superheroesService;
 
             this.View.OnSearchGetData += this.View_OnSearchGetData;

@@ -1,4 +1,5 @@
-﻿using SuperheroesUniverse.Services;
+﻿using Bytes2you.Validation;
+using SuperheroesUniverse.Services;
 using System;
 using WebFormsMvp;
 
@@ -8,9 +9,11 @@ namespace SuperheroesUniverse.MVP.Superheroes
     {
         private readonly ISuperheroesService superheroesService;
 
-        public SuperheroesPresenter(ISuperheroesView view, ISuperheroesService superheroesService) 
+        public SuperheroesPresenter(ISuperheroesView view, ISuperheroesService superheroesService)
             : base(view)
         {
+            Guard.WhenArgument(superheroesService, nameof(superheroesService)).IsNull().Throw();
+
             this.superheroesService = superheroesService;
 
             this.View.OnSuperheroesGetData += this.View_OnSuperheroesGetData;

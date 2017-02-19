@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using SuperheroesUniverse.Data.Models;
 using SuperheroesUniverse.Data;
+using Bytes2you.Validation;
 
 namespace SuperheroesUniverse.Services
 {
@@ -14,6 +12,8 @@ namespace SuperheroesUniverse.Services
 
         public SuperheroesService(ISuperheroesUniverseContext superheroesUniverseContext)
         {
+            Guard.WhenArgument(superheroesUniverseContext, nameof(superheroesUniverseContext)).IsNull().Throw();
+
             this.superheroesUniverseContext = superheroesUniverseContext;
         }
 
