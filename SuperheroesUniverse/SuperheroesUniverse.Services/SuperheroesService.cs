@@ -26,5 +26,11 @@ namespace SuperheroesUniverse.Services
         {
             return id.HasValue ? this.superheroesUniverseContext.Superheroes.Find(id) : null;
         }
+
+        public IQueryable<Superhero> Search(string pattern)
+        {
+            return this.superheroesUniverseContext.Superheroes
+                .Where(sh => sh.Name.ToLower().Contains(pattern) || sh.SecretIdentity.ToLower().Contains(pattern));
+        }
     }
 }

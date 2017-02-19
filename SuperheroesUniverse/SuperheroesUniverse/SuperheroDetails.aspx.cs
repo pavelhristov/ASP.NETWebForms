@@ -16,7 +16,7 @@ namespace SuperheroesUniverse
         {
             this.OnSuperheroDetailsGetData?.Invoke(this, new SuperheroDetailsGetDataEventArgs(id));
 
-            this.Title = $"{this.Model.Superhero.Name}: Superhero Details";
+            this.Title = string.IsNullOrWhiteSpace(id.ToString()) ? string.Empty : $"{this.Model.Superhero.Name}: Superhero Details";
             return this.Model.Superhero;
         }
     }

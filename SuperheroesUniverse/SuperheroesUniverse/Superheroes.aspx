@@ -1,5 +1,9 @@
 ﻿<%@ Page Title="Superheroes List" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Superheroes.aspx.cs" Inherits="SuperheroesUniverse.Superheroes" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <div>
+        <asp:TextBox ID="TextBoxSearch" runat="server" placeholder="Search by name or secret identity."></asp:TextBox>
+        <asp:LinkButton runat="server" ID="LinkButtonSearch" Text="Search" OnClick="LinkButtonSearch_Click"></asp:LinkButton>
+    </div>
     <asp:ListView runat="server" ID="ListViewSuperheroes" ItemType="SuperheroesUniverse.Data.Models.Superhero" SelectMethod="ListViewSuperheroes_GetData">
         <%--<GroupTemplate>
             <div class="row">
