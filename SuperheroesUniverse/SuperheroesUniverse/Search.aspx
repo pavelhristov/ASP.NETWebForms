@@ -15,4 +15,8 @@
             <hr />
         </ItemSeparatorTemplate>
     </asp:ListView>
+    
+    <div class="back-link">
+        <a href="/superheroes">Back to Superheroes List</a>
+    </div>
 </asp:Content>

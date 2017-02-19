@@ -19,9 +19,9 @@ namespace SuperheroesUniverse
         //     int startRowIndex
         //     out int totalRowCount
         //     string sortByExpression
-        public IQueryable<Superhero> ListViewFoundSuperheroes_GetData([QueryString] string search)
+        public IQueryable<Superhero> ListViewFoundSuperheroes_GetData([QueryString] string q)
         {
-            this.OnSearchGetData?.Invoke(this, new SearchGetDataEventArgs(search));
+            this.OnSearchGetData?.Invoke(this, new SearchGetDataEventArgs(q));
 
             return this.Model.Superheroes;           
         }

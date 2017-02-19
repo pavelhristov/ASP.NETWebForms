@@ -28,7 +28,7 @@ namespace SuperheroesUniverse
         protected void LinkButtonSearch_Click(object sender, EventArgs e)
         {
             string pattern = this.TextBoxSearch.Text;
-            string queryParams = string.IsNullOrWhiteSpace(pattern) ? string.Empty : $"?search={pattern}";
+            string queryParams = string.IsNullOrWhiteSpace(pattern) ? string.Empty : $"?q={pattern}";
 
             Response.Redirect("~/search"+queryParams);
         }
