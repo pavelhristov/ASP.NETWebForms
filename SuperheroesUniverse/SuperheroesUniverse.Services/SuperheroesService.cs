@@ -28,7 +28,7 @@ namespace SuperheroesUniverse.Services
 
         public IQueryable<Superhero> GetAll()
         {
-            return this.superheroesUniverseContext.Superheroes.Where(sh => !sh.isDeleted);
+            return this.superheroesUniverseContext.Superheroes.Where(sh => !sh.isDeleted).OrderBy(sh=>sh.Name);
         }
 
         public Superhero GetById(Guid? id)
@@ -50,7 +50,7 @@ namespace SuperheroesUniverse.Services
 
         public IQueryable<Superhero> ManagementGetAll()
         {
-            return this.superheroesUniverseContext.Superheroes;
+            return this.superheroesUniverseContext.Superheroes.OrderBy(sh => sh.Name);
         }
 
         public int RestoreSuperhero(Guid? id)

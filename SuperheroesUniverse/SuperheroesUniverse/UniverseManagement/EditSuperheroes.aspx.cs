@@ -27,7 +27,7 @@ namespace SuperheroesUniverse.UniverseManagement
         {
             this.OnSuperheroesGetData?.Invoke(this, null);
 
-            return this.Model.Superheroes.OrderBy(sh => sh.Name);
+            return this.Model.Superheroes;
         }
 
         // The id parameter name should match the DataKeyNames value set on the control
