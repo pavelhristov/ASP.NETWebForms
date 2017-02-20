@@ -28,6 +28,12 @@ namespace SuperheroesUniverse.MVP.EditSuperheroes
             this.View.OnSuperheroInsert += this.View_OnSuperheroInsert;
             this.View.OnSuperheroDelete += this.View_OnSuperheroDelete;
             this.View.OnSuperheroUpdate += this.View_OnSuperheroUpdate;
+            this.View.OnSuperheroRestore += this.View_OnSuperheroRestore;
+        }
+
+        private void View_OnSuperheroRestore(object sender, EditSuperheroesIdEventArgs e)
+        {
+            this.superheroesService.RestoreSuperhero(e.SuperheroId);
         }
 
         private void View_OnSuperheroUpdate(object sender, EditSuperheroesIdEventArgs e)
@@ -63,7 +69,7 @@ namespace SuperheroesUniverse.MVP.EditSuperheroes
 
         private void View_OnSuperheroesGetData(object sender, EventArgs e)
         {
-            this.View.Model.Superheroes = this.superheroesService.GetAll();
+            this.View.Model.Superheroes = this.superheroesService.ManagementGetAll();
         }
     }
 }

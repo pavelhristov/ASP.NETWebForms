@@ -1,12 +1,7 @@
-﻿using SuperheroesUniverse.Data;
-using SuperheroesUniverse.Data.Models;
+﻿using SuperheroesUniverse.Data.Models;
 using SuperheroesUniverse.MVP.EditSuperheroes;
-using SuperheroesUniverse.Services;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 using WebFormsMvp;
 using WebFormsMvp.Web;
@@ -20,6 +15,7 @@ namespace SuperheroesUniverse.UniverseManagement
         public event EventHandler OnSuperheroInsert;
         public event EventHandler<EditSuperheroesIdEventArgs> OnSuperheroDelete;
         public event EventHandler<EditSuperheroesIdEventArgs> OnSuperheroUpdate;
+        public event EventHandler<EditSuperheroesIdEventArgs> OnSuperheroRestore;
 
         // The return type can be changed to IEnumerable, however to support
         // paging and sorting, the following parameters must be added:
@@ -64,6 +60,12 @@ namespace SuperheroesUniverse.UniverseManagement
         {
             this.ListViewEditSuperheroes.InsertItemPosition = InsertItemPosition.None;
             this.ListViewEditSuperheroes.FindControl("LinkButtonInsert").Visible = true;
+        }
+
+        protected void LinkButtonRestore_Command(object sender, CommandEventArgs e)
+        {
+            Guid? id = Guid.Parse(e.CommandArgument.ToString());
+            this.OnSuperheroRestore?.Invoke(this, new EditSuperheroesIdEventArgs(id));
         }
     }
 }

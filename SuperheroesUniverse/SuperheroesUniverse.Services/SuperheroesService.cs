@@ -48,6 +48,22 @@ namespace SuperheroesUniverse.Services
             return this.superheroesUniverseContext.SaveChanges();
         }
 
+        public IQueryable<Superhero> ManagementGetAll()
+        {
+            return this.superheroesUniverseContext.Superheroes;
+        }
+
+        public int RestoreSuperhero(Guid? id)
+        {
+            Superhero superhero = id.HasValue ? this.superheroesUniverseContext.Superheroes.Find(id) : null; ;
+
+            Guard.WhenArgument(superhero, nameof(superhero)).IsNull().Throw();
+
+            superhero.isDeleted = false;
+
+            return this.superheroesUniverseContext.SaveChanges();
+        }
+
         public IQueryable<Superhero> Search(string pattern)
         {
             return this.superheroesUniverseContext.Superheroes

@@ -8,11 +8,15 @@ namespace SuperheroesUniverse.Services
     {
         IQueryable<Superhero> GetAll();
 
+        IQueryable<Superhero> ManagementGetAll();
+
         Superhero GetById(Guid? id);
 
         int InsertSuperhero(Superhero superhero);
 
         int DeleteSuperhero(Guid? id);
+
+        int RestoreSuperhero(Guid? id);
 
         IQueryable<Superhero> Search(string pattern);
 

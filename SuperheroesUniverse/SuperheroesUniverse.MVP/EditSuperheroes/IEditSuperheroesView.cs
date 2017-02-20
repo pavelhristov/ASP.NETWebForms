@@ -14,6 +14,8 @@ namespace SuperheroesUniverse.MVP.EditSuperheroes
 
         event EventHandler<EditSuperheroesIdEventArgs> OnSuperheroUpdate;
 
+        event EventHandler<EditSuperheroesIdEventArgs> OnSuperheroRestore;
+
         ModelStateDictionary ModelState { get; }
 
         bool TryUpdateModel<TModel>(TModel model) where TModel : class;

@@ -49,7 +49,13 @@
                 <td><%#: Item.ImgUrl %></td>
                 <td>
                     <asp:LinkButton runat="server" ID="LinkButtonEdit" Text="Edit" CommandName="Edit" />
-                    <asp:LinkButton runat="server" ID="LinkButtonDelete" Text="Delete" CommandName="Delete" />
+                    <asp:PlaceHolder runat="server" Visible='<%# Item.isDeleted %>'>
+                        <asp:LinkButton runat="server" ID="LinkButtonRestore" Text="Restore" OnCommand="LinkButtonRestore_Command" CommandArgument='<%# Eval("Id")%>' />
+                    </asp:PlaceHolder>
+
+                    <asp:PlaceHolder runat="server" Visible='<%# !Item.isDeleted %>'>
+                        <asp:LinkButton runat="server" ID="LinkButtonDelete" Text="Delete" CommandName="Delete" />
+                    </asp:PlaceHolder>
                 </td>
             </tr>
         </ItemTemplate>
