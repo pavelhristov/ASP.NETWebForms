@@ -48,7 +48,9 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" runat="server" href="~/">Superheroes Universe</a>
+                    <a class="navbar-brand" runat="server" href="~/">
+                        <img alt="Brand" src="http://www.rubattle.net/images/upload/image/IconBrooding.png" width="20">
+                        Superheroes Universe</a>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
