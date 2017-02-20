@@ -2,16 +2,15 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <h2><%: Title %>.</h2>
-    <h3>Your contact page.</h3>
-    <address>
-        One Microsoft Way<br />
-        Redmond, WA 98052-6399<br />
-        <abbr title="Phone">P:</abbr>
-        425.555.0100
-    </address>
+    <h3>Author:</h3>
+    <h4>Pavel Hristov</h4>
 
     <address>
-        <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-        <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+        <strong>Support:</strong> <a href="mailto:pavel.hristov_@abv.bg">pavel.hristov_@abv.bg</a>
+        <br />
+        <strong>Source:</strong>
+        <a
+            href="https://github.com/pavelhristov/ASP.NETWebForms/tree/master/SuperheroesUniverse">
+            <img src="https://image.flaticon.com/icons/svg/23/23957.svg" alt="GitHub"  width="25"></a>
     </address>
 </asp:Content>
