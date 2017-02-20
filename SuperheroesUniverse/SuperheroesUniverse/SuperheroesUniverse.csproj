@@ -251,8 +251,11 @@
     <Content Include="Site.Master" />
     <Content Include="SuperheroDetails.aspx" />
     <Content Include="Superheroes.aspx" />
+    <Content Include="UniverseManagement\EditSuperheroes.aspx" />
     <Content Include="ViewSwitcher.ascx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Bundle.config" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
@@ -437,6 +440,13 @@
     </Compile>
     <Compile Include="Superheroes.aspx.designer.cs">
       <DependentUpon>Superheroes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UniverseManagement\EditSuperheroes.aspx.cs">
+      <DependentUpon>EditSuperheroes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UniverseManagement\EditSuperheroes.aspx.designer.cs">
+      <DependentUpon>EditSuperheroes.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>

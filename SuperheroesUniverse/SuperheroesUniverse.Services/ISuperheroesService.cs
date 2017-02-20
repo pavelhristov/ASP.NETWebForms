@@ -10,6 +10,12 @@ namespace SuperheroesUniverse.Services
 
         Superhero GetById(Guid? id);
 
+        int InsertSuperhero(Superhero superhero);
+
+        int DeleteSuperhero(Guid? id);
+
         IQueryable<Superhero> Search(string pattern);
+
+        int UpdateSuperhero(Superhero superhero);
     }
 }

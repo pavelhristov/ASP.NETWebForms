@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ISuperheroesUniverseBaseContext.cs" />
     <Compile Include="ISuperheroesUniverseContext.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Superhero.cs" />

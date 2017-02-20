@@ -7,6 +7,7 @@ namespace SuperheroesUniverse.Data.Models
     public class Superhero
     {
         // TODO: research guid vs int!
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Id { get; set; }
 
         [Required]
@@ -19,5 +20,7 @@ namespace SuperheroesUniverse.Data.Models
 
         [Required]
         public string ImgUrl { get; set; }
+
+        public bool isDeleted { get; set; }
     }
 }
