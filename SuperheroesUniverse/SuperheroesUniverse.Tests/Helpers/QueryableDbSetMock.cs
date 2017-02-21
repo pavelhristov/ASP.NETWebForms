@@ -7,12 +7,12 @@ namespace SuperheroesUniverse.Tests.Helpers
 {
     public class QueryableDbSetMock
     {
-        public static IDbSet<T> GetQueryableMockDbSet<T>(IEnumerable<T> sourceList) where T : class
+        public static Mock<IDbSet<T>> GetQueryableMockDbSet<T>(IEnumerable<T> sourceList) where T : class
         {
             return GetQueryableMockDbSet(sourceList.ToArray());
         }
 
-        public static IDbSet<T> GetQueryableMockDbSet<T>(params T[] sourceList) where T : class
+        public static Mock<IDbSet<T>> GetQueryableMockDbSet<T>(params T[] sourceList) where T : class
         {
             var queryable = sourceList.AsQueryable();
 
@@ -22,7 +22,7 @@ namespace SuperheroesUniverse.Tests.Helpers
             dbSet.As<IQueryable<T>>().Setup(m => m.ElementType).Returns(queryable.ElementType);
             dbSet.As<IQueryable<T>>().Setup(m => m.GetEnumerator()).Returns(queryable.GetEnumerator());
 
-            return dbSet.Object;
+            return dbSet;
         }
     }
 }

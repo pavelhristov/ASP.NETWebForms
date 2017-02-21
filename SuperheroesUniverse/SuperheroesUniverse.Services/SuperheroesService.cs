@@ -21,6 +21,8 @@ namespace SuperheroesUniverse.Services
         {
             Superhero superhero = this.GetById(id);
 
+            Guard.WhenArgument(superhero, nameof(superhero)).IsNull().Throw();
+
             superhero.isDeleted = true;
 
             return this.superheroesUniverseContext.SaveChanges();

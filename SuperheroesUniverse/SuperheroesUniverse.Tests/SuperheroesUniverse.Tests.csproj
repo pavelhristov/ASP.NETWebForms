@@ -68,11 +68,17 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helpers\Helper.cs" />
     <Compile Include="Helpers\QueryableDbSetMock.cs" />
+    <Compile Include="Services\SuperheroesServiceTests\DeleteSuperhero_Should.cs" />
     <Compile Include="Services\SuperheroesServiceTests\GetAll_Should.cs" />
     <Compile Include="Services\SuperheroesServiceTests\GetById_Should.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\SuperheroesServiceTests\InsertSuperhero_Should.cs" />
+    <Compile Include="Services\SuperheroesServiceTests\ManagementGetAll_Should.cs" />
+    <Compile Include="Services\SuperheroesServiceTests\RestoreSuperhero_Should.cs" />
     <Compile Include="Services\SuperheroesServiceTests\Search_Should.cs" />
+    <Compile Include="Services\SuperheroesServiceTests\UpdateSuperhero_Should.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SuperheroesUniverse.Data\SuperheroesUniverse.Data.csproj">

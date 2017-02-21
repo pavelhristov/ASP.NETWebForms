@@ -9,7 +9,7 @@ using System.Linq;
 namespace SuperheroesUniverse.Tests.Services.SuperheroesServiceTests
 {
     [TestFixture]
-    public class GetAll_Should
+    public class ManagementGetAll_Should
     {
         [Test]
         public void ReturnIQueriableOfSuperheroes_WhenCalled()
@@ -22,25 +22,25 @@ namespace SuperheroesUniverse.Tests.Services.SuperheroesServiceTests
             ISuperheroesService superheroesService = new SuperheroesService(contextMock.Object);
 
             // Act
-            var superheroesFound = superheroesService.GetAll();
+            var superheroesFound = superheroesService.ManagementGetAll();
 
             // Assert
             Assert.IsInstanceOf<IQueryable<Superhero>>(superheroesFound);
         }
 
         [Test]
-        public void NotReturnSuperheroes_WhoAreDeleted()
+        public void ReturnSuperheroes_WhoAreDeletedAndAreNotDeleted()
         {
             // Arrange
             var superheroes = Helper.GetSuperheroes();
-            var expectedResults = superheroes.Where(sh => !sh.isDeleted).AsQueryable();
+            var expectedResults = superheroes.AsQueryable();
             var contextMock = new Mock<ISuperheroesUniverseContext>();
             var superheroDbSetMock = QueryableDbSetMock.GetQueryableMockDbSet(superheroes);
             contextMock.Setup(ctx => ctx.Superheroes).Returns(superheroDbSetMock.Object);
             ISuperheroesService superheroesService = new SuperheroesService(contextMock.Object);
 
             // Act
-            var superheroesFound = superheroesService.GetAll();
+            var superheroesFound = superheroesService.ManagementGetAll();
 
             // Assert
             CollectionAssert.AreEquivalent(expectedResults, superheroesFound);

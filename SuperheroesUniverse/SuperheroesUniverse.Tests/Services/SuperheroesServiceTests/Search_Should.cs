@@ -4,8 +4,6 @@ using SuperheroesUniverse.Data;
 using SuperheroesUniverse.Data.Models;
 using SuperheroesUniverse.Services;
 using SuperheroesUniverse.Tests.Helpers;
-using System;
-using System.Collections.Generic;
 using System.Linq;
 
 namespace SuperheroesUniverse.Tests.Services.SuperheroesServiceTests
@@ -13,42 +11,13 @@ namespace SuperheroesUniverse.Tests.Services.SuperheroesServiceTests
     [TestFixture]
     public class Search_Should
     {
-        private IEnumerable<Superhero> GetSuperheroes()
-        {
-            return new List<Superhero>()
-            {
-                new Superhero()
-                {
-                    Id = Guid.NewGuid(),
-                    Name = "name 1",
-                    SecretIdentity = "secret identity 1",
-                    ImgUrl = "image url 1",
-                    isDeleted = false
-                },new Superhero()
-                {
-                    Id = Guid.NewGuid(),
-                    Name = "name 2",
-                    SecretIdentity = "secret identity 2",
-                    ImgUrl = "image url 2",
-                    isDeleted = false
-                },new Superhero()
-                {
-                    Id = Guid.NewGuid(),
-                    Name = "name 3",
-                    SecretIdentity = "secret identity 3",
-                    ImgUrl = "image url 3",
-                    isDeleted = true
-                }
-            };
-        }
-
         [Test]
         public void ReturnIQueriableOfSuperheroes_WhenCalled()
         {
             // Arrange
             var contextMock = new Mock<ISuperheroesUniverseContext>();
-            var superheroDbSetMock = QueryableDbSetMock.GetQueryableMockDbSet(this.GetSuperheroes());
-            contextMock.Setup(ctx => ctx.Superheroes).Returns(superheroDbSetMock);
+            var superheroDbSetMock = QueryableDbSetMock.GetQueryableMockDbSet(Helper.GetSuperheroes());
+            contextMock.Setup(ctx => ctx.Superheroes).Returns(superheroDbSetMock.Object);
             ISuperheroesService superheroesService = new SuperheroesService(contextMock.Object);
             string pattern = "some pattern";
 
@@ -66,11 +35,11 @@ namespace SuperheroesUniverse.Tests.Services.SuperheroesServiceTests
         public void ReturnSuperheroes_WhoAreNotDeletedAndMatchingPatternForName(string patternForName)
         {
             // Arrange
-            var superheroes = this.GetSuperheroes();
+            var superheroes = Helper.GetSuperheroes();
             var expectedResults = superheroes.Where(sh => sh.Name.Contains(patternForName) && !sh.isDeleted).AsQueryable();
             var contextMock = new Mock<ISuperheroesUniverseContext>();
             var superheroDbSetMock = QueryableDbSetMock.GetQueryableMockDbSet(superheroes);
-            contextMock.Setup(ctx => ctx.Superheroes).Returns(superheroDbSetMock);
+            contextMock.Setup(ctx => ctx.Superheroes).Returns(superheroDbSetMock.Object);
             ISuperheroesService superheroesService = new SuperheroesService(contextMock.Object);
 
             // Act
@@ -88,11 +57,11 @@ namespace SuperheroesUniverse.Tests.Services.SuperheroesServiceTests
         public void ReturnSuperheroes_WhoAreNotDeletedAndMatchingPatternForSecretIdentity(string patternForSecretIdentity)
         {
             // Arrange
-            var superheroes = this.GetSuperheroes();
+            var superheroes = Helper.GetSuperheroes();
             var expectedResults = superheroes.Where(sh => sh.SecretIdentity.Contains(patternForSecretIdentity) && !sh.isDeleted).AsQueryable();
             var contextMock = new Mock<ISuperheroesUniverseContext>();
             var superheroDbSetMock = QueryableDbSetMock.GetQueryableMockDbSet(superheroes);
-            contextMock.Setup(ctx => ctx.Superheroes).Returns(superheroDbSetMock);
+            contextMock.Setup(ctx => ctx.Superheroes).Returns(superheroDbSetMock.Object);
             ISuperheroesService superheroesService = new SuperheroesService(contextMock.Object);
 
             // Act
@@ -110,11 +79,11 @@ namespace SuperheroesUniverse.Tests.Services.SuperheroesServiceTests
         public void NotReturnSuperheroes_WhoAreDeletedAndMatchingPatternForName(string pattern)
         {
             // Arrange
-            var superheroes = this.GetSuperheroes();
+            var superheroes = Helper.GetSuperheroes();
             var expectedResults = superheroes.Where(sh => (sh.SecretIdentity.Contains(pattern)|| sh.Name.Contains(pattern)) && !sh.isDeleted).AsQueryable();
             var contextMock = new Mock<ISuperheroesUniverseContext>();
             var superheroDbSetMock = QueryableDbSetMock.GetQueryableMockDbSet(superheroes);
-            contextMock.Setup(ctx => ctx.Superheroes).Returns(superheroDbSetMock);
+            contextMock.Setup(ctx => ctx.Superheroes).Returns(superheroDbSetMock.Object);
             ISuperheroesService superheroesService = new SuperheroesService(contextMock.Object);
 
             // Act
