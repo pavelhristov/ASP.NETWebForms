@@ -66,10 +66,17 @@
     <Reference Include="System.Web.Routing" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebFormsMvp, Version=1.4.5.0, Culture=neutral, PublicKeyToken=537f18701145dff0, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebFormsMvp.1.4.5.0\lib\WebFormsMvp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\Helper.cs" />
     <Compile Include="Helpers\QueryableDbSetMock.cs" />
+    <Compile Include="MVP\EditSuperheroes\EditSuperheroesPresenterTests\View_OnSuperheroesGetData_Should.cs" />
+    <Compile Include="MVP\EditSuperheroes\EditSuperheroesPresenterTests\View_OnSuperheroUpdate_Should.cs" />
+    <Compile Include="MVP\Superheroes\SuperheroesPresenterTests\View_OnSuperheroesGetData_Should.cs" />
     <Compile Include="Services\SuperheroesServiceTests\DeleteSuperhero_Should.cs" />
     <Compile Include="Services\SuperheroesServiceTests\GetAll_Should.cs" />
     <Compile Include="Services\SuperheroesServiceTests\GetById_Should.cs" />
@@ -85,6 +92,10 @@
       <Project>{946ec8af-90b5-4fdc-9ca3-0de5e1ae3d2a}</Project>
       <Name>SuperheroesUniverse.Data</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SuperheroesUniverse.MVP\SuperheroesUniverse.MVP.csproj">
+      <Project>{3F813543-CE50-488D-A453-DD10A1FA983F}</Project>
+      <Name>SuperheroesUniverse.MVP</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SuperheroesUniverse.Services\SuperheroesUniverse.Services.csproj">
       <Project>{94242a7f-0d38-4d33-9001-5014fc9199ba}</Project>
       <Name>SuperheroesUniverse.Services</Name>
@@ -98,6 +109,7 @@
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

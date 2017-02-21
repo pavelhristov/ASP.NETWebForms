@@ -10,19 +10,15 @@ namespace SuperheroesUniverse.MVP.EditSuperheroes
     public class EditSuperheroesPresenter : Presenter<IEditSuperheroesView>
     {
         private readonly ISuperheroesService superheroesService;
-        private readonly ISuperheroesUniverseBaseContext superheroesUniverseBaseContext;
 
         public EditSuperheroesPresenter(
             IEditSuperheroesView view,
-            ISuperheroesService superheroesService,
-            ISuperheroesUniverseBaseContext superheroesUniverseBaseContext)
+            ISuperheroesService superheroesService)
             : base(view)
         {
             Guard.WhenArgument(superheroesService, nameof(superheroesService)).IsNull().Throw();
-            Guard.WhenArgument(superheroesUniverseBaseContext, nameof(superheroesUniverseBaseContext)).IsNull().Throw();
 
             this.superheroesService = superheroesService;
-            this.superheroesUniverseBaseContext = superheroesUniverseBaseContext;
 
             this.View.OnSuperheroesGetData += this.View_OnSuperheroesGetData;
             this.View.OnSuperheroInsert += this.View_OnSuperheroInsert;

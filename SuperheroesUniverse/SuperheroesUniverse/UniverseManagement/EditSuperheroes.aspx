@@ -48,14 +48,16 @@
                 <td><%#: Item.SecretIdentity %></td>
                 <td><%#: Item.ImgUrl %></td>
                 <td>
-                    <asp:LinkButton runat="server" ID="LinkButtonEdit" Text="Edit" CommandName="Edit" />
-                    <asp:PlaceHolder runat="server" Visible='<%# Item.isDeleted %>'>
-                        <asp:LinkButton runat="server" ID="LinkButtonRestore" Text="Restore" OnCommand="LinkButtonRestore_Command" CommandArgument='<%# Eval("Id")%>' />
-                    </asp:PlaceHolder>
+                    <div class="btn-group">
+                        <asp:PlaceHolder runat="server" Visible='<%# Item.isDeleted %>'>
+                            <asp:LinkButton runat="server" ID="LinkButtonRestore" Text="Restore" OnCommand="LinkButtonRestore_Command" CommandArgument='<%# Eval("Id")%>' CssClass="btn btn-success" />
+                        </asp:PlaceHolder>
 
-                    <asp:PlaceHolder runat="server" Visible='<%# !Item.isDeleted %>'>
-                        <asp:LinkButton runat="server" ID="LinkButtonDelete" Text="Delete" CommandName="Delete" />
-                    </asp:PlaceHolder>
+                        <asp:PlaceHolder runat="server" Visible='<%# !Item.isDeleted %>'>
+                            <asp:LinkButton runat="server" ID="LinkButtonEdit" Text="Edit" CommandName="Edit" CssClass="btn btn-primary" />
+                            <asp:LinkButton runat="server" ID="LinkButtonDelete" Text="Delete" CommandName="Delete" CssClass="btn btn-danger" />
+                        </asp:PlaceHolder>
+                    </div>
                 </td>
             </tr>
         </ItemTemplate>
