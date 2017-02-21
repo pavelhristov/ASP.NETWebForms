@@ -2,32 +2,31 @@
 using NUnit.Framework;
 using SuperheroesUniverse.MVP.EditSuperheroes;
 using SuperheroesUniverse.Services;
-using SuperheroesUniverse.Tests.Helpers;
 using System;
-using System.Linq;
 
 namespace SuperheroesUniverse.Tests.MVP.EditSuperheroes.EditSuperheroesPresenterTests
 {
     [TestFixture]
-    public class View_OnSuperheroesGetData_Should
+    public class View_OnSuperheroDelete_Should
     {
         [Test]
-        public void AddSuperheroesToViewModel_WhenOnSuperheroesGetDataIsRaised()
+        public void CallDeleteSuperhero_WithRightParameters_WhenInvoked()
         {
             // Arrange
-            var superheroes = Helper.GetSuperheroes().AsQueryable();
             var viewMock = new Mock<IEditSuperheroesView>();
-            viewMock.Setup(v => v.Model).Returns(new EditSuperheroesViewModel());
+
+            Guid id = Guid.NewGuid();
+
             var superheroesServiceMock = new Mock<ISuperheroesService>();
-            superheroesServiceMock.Setup(s => s.ManagementGetAll()).Returns(superheroes);
+            superheroesServiceMock.Setup(s => s.RestoreSuperhero(id)).Returns(1);
 
             EditSuperheroesPresenter superheroesPresenter = new EditSuperheroesPresenter(viewMock.Object, superheroesServiceMock.Object);
 
             // Act
-            viewMock.Raise(v => v.OnSuperheroesGetData += null, EventArgs.Empty);
+            viewMock.Raise(v => v.OnSuperheroDelete += null, new EditSuperheroesIdEventArgs(id));
 
             // Assert
-            CollectionAssert.AreEquivalent(superheroes, viewMock.Object.Model.Superheroes);
+            superheroesServiceMock.Verify(s => s.DeleteSuperhero(id), Times.Once());
         }
     }
 }

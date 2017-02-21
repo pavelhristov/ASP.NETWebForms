@@ -1,5 +1,4 @@
 ﻿using Bytes2you.Validation;
-using SuperheroesUniverse.Data;
 using SuperheroesUniverse.Data.Models;
 using SuperheroesUniverse.Services;
 using System;

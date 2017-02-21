@@ -3,12 +3,7 @@ using NUnit.Framework;
 using SuperheroesUniverse.Data.Models;
 using SuperheroesUniverse.MVP.EditSuperheroes;
 using SuperheroesUniverse.Services;
-using SuperheroesUniverse.Tests.Helpers;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Web.ModelBinding;
 
 namespace SuperheroesUniverse.Tests.MVP.EditSuperheroes.EditSuperheroesPresenterTests
@@ -42,7 +37,7 @@ namespace SuperheroesUniverse.Tests.MVP.EditSuperheroes.EditSuperheroesPresenter
         }
 
         [Test]
-        public void TryUpdateModelIsNotCalled_WhenSuperheroIsNotFound()
+        public void NotCallTryUpdateModel_WhenSuperheroIsNotFound()
         {
             // Arrange
             var viewMock = new Mock<IEditSuperheroesView>();
@@ -63,7 +58,7 @@ namespace SuperheroesUniverse.Tests.MVP.EditSuperheroes.EditSuperheroesPresenter
         }
 
         [Test]
-        public void TryUpdateModelIsCalled_WhenSuperheroIsFound()
+        public void CallTryUpdateModel_WhenSuperheroIsFound()
         {
             // Arrange
             var viewMock = new Mock<IEditSuperheroesView>();
@@ -84,7 +79,7 @@ namespace SuperheroesUniverse.Tests.MVP.EditSuperheroes.EditSuperheroesPresenter
         }
 
         [Test]
-        public void UpdateSuperheroIsCalled_WhenSuperheroIsFoundAndIsInValidState()
+        public void CallUpdateSuperhero_WhenSuperheroIsFoundAndIsInValidState()
         {
             // Arrange
             var viewMock = new Mock<IEditSuperheroesView>();

@@ -74,7 +74,10 @@
   <ItemGroup>
     <Compile Include="Helpers\Helper.cs" />
     <Compile Include="Helpers\QueryableDbSetMock.cs" />
+    <Compile Include="MVP\EditSuperheroes\EditSuperheroesPresenterTests\View_OnSuperheroDelete_Should.cs" />
     <Compile Include="MVP\EditSuperheroes\EditSuperheroesPresenterTests\View_OnSuperheroesGetData_Should.cs" />
+    <Compile Include="MVP\EditSuperheroes\EditSuperheroesPresenterTests\View_OnSuperheroInsert_Should.cs" />
+    <Compile Include="MVP\EditSuperheroes\EditSuperheroesPresenterTests\View_OnSuperheroRestore_Should.cs" />
     <Compile Include="MVP\EditSuperheroes\EditSuperheroesPresenterTests\View_OnSuperheroUpdate_Should.cs" />
     <Compile Include="MVP\Superheroes\SuperheroesPresenterTests\View_OnSuperheroesGetData_Should.cs" />
     <Compile Include="Services\SuperheroesServiceTests\DeleteSuperhero_Should.cs" />

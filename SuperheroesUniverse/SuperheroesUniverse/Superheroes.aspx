@@ -17,7 +17,7 @@
                 <asp:PlaceHolder runat="server" ID="itemPlaceHolder"></asp:PlaceHolder>
             </div>
             <div class="btn-group">
-                <asp:DataPager runat="server" ID="DataPagerCategories" PagedControlID="ListViewSuperheroes" PageSize="2">
+                <asp:DataPager runat="server" ID="DataPagerCategories" PagedControlID="ListViewSuperheroes" PageSize="5">
                     <Fields>
                         <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="False" ShowNextPageButton="False" ButtonCssClass="btn btn-default" />
                         <asp:NumericPagerField />
