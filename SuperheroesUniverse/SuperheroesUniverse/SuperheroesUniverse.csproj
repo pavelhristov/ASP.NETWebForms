@@ -252,6 +252,7 @@
     <Content Include="SuperheroDetails.aspx" />
     <Content Include="Superheroes.aspx" />
     <Content Include="UniverseManagement\EditSuperheroes.aspx" />
+    <Content Include="UniverseManagement\EditUsers.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -447,6 +448,13 @@
     </Compile>
     <Compile Include="UniverseManagement\EditSuperheroes.aspx.designer.cs">
       <DependentUpon>EditSuperheroes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UniverseManagement\EditUsers.aspx.cs">
+      <DependentUpon>EditUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UniverseManagement\EditUsers.aspx.designer.cs">
+      <DependentUpon>EditUsers.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>

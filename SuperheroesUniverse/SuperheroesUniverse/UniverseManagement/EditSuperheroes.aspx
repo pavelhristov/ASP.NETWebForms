@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolderHeader" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <h1>PESHO !</h1>
+    <h1><%#: Title %></h1>
     <asp:ListView ID="ListViewEditSuperheroes" runat="server" ItemType="SuperheroesUniverse.Data.Models.Superhero" InsertItemPosition="None"
         SelectMethod="ListViewEditSuperheroes_GetData"
         UpdateMethod="ListViewEditSuperheroes_UpdateItem"
@@ -46,9 +46,9 @@
             <tr>
                 <td><%#: Item.Name %></td>
                 <td><%#: Item.SecretIdentity %></td>
-                <td><%#: Item.ImgUrl %></td>
+                <td><%#: Item.ImgUrl %><</td>
                 <td>
-                    <div class="btn-group">
+                    <div class="btn-group buttons">
                         <asp:PlaceHolder runat="server" Visible='<%# Item.isDeleted %>'>
                             <asp:LinkButton runat="server" ID="LinkButtonRestore" Text="Restore" OnCommand="LinkButtonRestore_Command" CommandArgument='<%# Eval("Id")%>' CssClass="btn btn-success" />
                         </asp:PlaceHolder>
@@ -73,8 +73,10 @@
                     <asp:TextBox runat="server" Width="100%" ID="TextBoxImgUrl" Text="<%#: BindItem.ImgUrl %>" />
                 </td>
                 <td>
-                    <asp:LinkButton runat="server" ID="LinkButtonEdit" Text="Save" CommandName="Update" />
-                    <asp:LinkButton runat="server" ID="LinkButtonDelete" Text="Cancel" CommandName="Cancel" />
+                    <div class="btn-group buttons">
+                        <asp:LinkButton runat="server" ID="LinkButtonEdit" Text="Save" CommandName="Update" CssClass="btn btn-success" />
+                        <asp:LinkButton runat="server" ID="LinkButtonDelete" Text="Cancel" CommandName="Cancel" CssClass="btn btn-danger" />
+                    </div>
                 </td>
             </tr>
         </EditItemTemplate>
@@ -90,8 +92,10 @@
                     <asp:TextBox runat="server" Width="100%" ID="TextBoxImgUrl" Text="<%#: BindItem.ImgUrl %>" />
                 </td>
                 <td>
-                    <asp:LinkButton runat="server" ID="LinkButtonEdit" Text="Insert" CommandName="Insert" />
-                    <asp:LinkButton runat="server" ID="LinkButtonDelete" Text="Cancel" CommandName="Cancel" OnClick="LinkButtonDelete_Click" />
+                    <div class="btn-group buttons">
+                        <asp:LinkButton runat="server" ID="LinkButtonEdit" Text="Insert" CommandName="Insert" CssClass="btn btn-success" />
+                        <asp:LinkButton runat="server" ID="LinkButtonDelete" Text="Cancel" CommandName="Cancel" OnClick="LinkButtonDelete_Click" CssClass="btn btn-danger" />
+                    </div>
                 </td>
             </tr>
         </InsertItemTemplate>
