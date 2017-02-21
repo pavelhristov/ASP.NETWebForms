@@ -49,7 +49,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="EditSuperheroes\EditSuperheroesIdEventArgs.cs" />
     <Compile Include="EditSuperheroes\EditSuperheroesPresenter.cs" />
     <Compile Include="EditSuperheroes\EditSuperheroesViewModel.cs" />

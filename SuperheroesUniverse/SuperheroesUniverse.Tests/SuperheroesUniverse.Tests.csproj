@@ -79,6 +79,8 @@
     <Compile Include="MVP\EditSuperheroes\EditSuperheroesPresenterTests\View_OnSuperheroInsert_Should.cs" />
     <Compile Include="MVP\EditSuperheroes\EditSuperheroesPresenterTests\View_OnSuperheroRestore_Should.cs" />
     <Compile Include="MVP\EditSuperheroes\EditSuperheroesPresenterTests\View_OnSuperheroUpdate_Should.cs" />
+    <Compile Include="MVP\Search\SearchPresenterTests\View_OnSearchGetData_Should.cs" />
+    <Compile Include="MVP\SuperheroDetails\SuperheroDetailsPresenterTests\View_OnSuperheroDetailsGetData_Should.cs" />
     <Compile Include="MVP\Superheroes\SuperheroesPresenterTests\View_OnSuperheroesGetData_Should.cs" />
     <Compile Include="Services\SuperheroesServiceTests\DeleteSuperhero_Should.cs" />
     <Compile Include="Services\SuperheroesServiceTests\GetAll_Should.cs" />
