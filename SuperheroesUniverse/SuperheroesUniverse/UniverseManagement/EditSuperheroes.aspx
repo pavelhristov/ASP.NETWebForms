@@ -46,7 +46,7 @@
             <tr>
                 <td><%#: Item.Name %></td>
                 <td><%#: Item.SecretIdentity %></td>
-                <td><%#: Item.ImgUrl %><</td>
+                <td><%#: Item.ImgUrl %></td>
                 <td>
                     <div class="btn-group buttons">
                         <asp:PlaceHolder runat="server" Visible='<%# Item.isDeleted %>'>
